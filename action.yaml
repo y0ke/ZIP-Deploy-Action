@@ -1,0 +1,6 @@
+# action.yml
+name: 'zipSCPAction'
+description: 'Zip all files and deploy them to a server.'
+runs:
+    using: 'docker'
+    image: 'Dockerfile'
