@@ -4,7 +4,6 @@ M_LOCAL_DIR=${LOCAL_DIR:-"./"}
 M_REMOTE_DIR=${REMOTE_DIR:-"~/"}
 M_TMP_DIR=${TMP_DIR:-"~/"}
 
-
 echo "Creating a zip files..."
 cd $M_LOCAL_DIR
 zip ~/dist.zip -r ./ -x \*/.git/\* $EXCLUDE
@@ -23,9 +22,9 @@ else
       SCPCOMMAND="sshpass -p $DEPLOY_PASSWORD ssh"
 fi
 
-${SCPCOMMAND} -o StrictHostKeyChecking=no dist.zip ${DEPLOY_USERNAME}@${TARGET_SERVER}:${M_TMP_DIR}
+eval ${SCPCOMMAND} -o StrictHostKeyChecking=no dist.zip ${DEPLOY_USERNAME}@${TARGET_SERVER}:${M_TMP_DIR}
 
-${SSHCOMMAND} ${DEPLOY_USERNAME}@${TARGET_SERVER} bash -c "'
+eval ${SSHCOMMAND} ${DEPLOY_USERNAME}@${TARGET_SERVER} bash -c "'
 cd ${M_TMP_DIR}
 rm -rf tmp_zip
 mkdir tmp_zip
