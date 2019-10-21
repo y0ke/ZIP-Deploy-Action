@@ -21,4 +21,5 @@ jobs:
           TARGET_SERVER: ${{ secrets.SERVER_NAME }}
           DEPLOY_USERNAME: ${{ secrets.DEPLOY_USERNAME }}
           DEPLOY_PASSWORD: ${{ secrets.DEPLOY_PASSWORD }}
+          EXTRA_COMMANDS: ${{ secrets.DEPLOY_EXTRA_COMMANDS }}
 ```
