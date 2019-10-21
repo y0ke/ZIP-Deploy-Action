@@ -23,6 +23,8 @@ unzip dist.zip -d tmp_zip
 cp -Rpf tmp_zip/. ${M_REMOTE_DIR}
 rm -rf tmp_zip
 rm dist.zip
+cd ${M_REMOTE_DIR}
+${EXTRA_COMMANDS}
 '"
 
 echo "Deploy completed"
